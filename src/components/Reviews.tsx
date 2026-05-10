@@ -5,19 +5,19 @@ const reviews = [
     name: "Anjali & Rohan",
     where: "Bariatu, Ranchi",
     text: "We bought my entire bridal set from Pearl House. Owner uncle sat with my mother for three hours, explained every gram, every stone. The polki choker is now an heirloom for our daughter someday.",
-    accent: "#FF1493",
+    accent: "#C9A96E",
   },
   {
     name: "Sushma Devi",
     where: "Doranda",
     text: "Three generations of our family buy here. They never push. The exchange policy is honest. My mangalsutra was made exactly to my mother-in-law's old design.",
-    accent: "#00D9FF",
+    accent: "#F0E0A8",
   },
   {
     name: "Karan Agarwal",
     where: "Lalpur",
     text: "Bought a 1.2ct solitaire for my wife's anniversary. IGI certificate, fair price, beautiful presentation box. Felt like a Mumbai showroom — right here in Ranchi.",
-    accent: "#FF6B35",
+    accent: "#D4913C",
   },
 ];
 
@@ -26,7 +26,7 @@ export function Reviews() {
     <section id="reviews" className="relative py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center fade-up">
-          <p className="label text-fuchsia-deco">◆ Trusted by Ranchi Families ◆</p>
+          <p className="label" style={{ color: "#C9A96E" }}>◆ Trusted by Ranchi Families ◆</p>
           <h2 className="mt-5 font-display text-4xl md:text-6xl">
             4.3 <span className="italic shimmer-vibrant">★★★★★</span> on Google
           </h2>
@@ -41,9 +41,12 @@ export function Reviews() {
             <article
               key={r.name}
               className="luxe-card relative bg-[color:var(--ivory)] p-9 border"
-              style={{ borderColor: r.accent }}
+              style={{ borderColor: `${r.accent}60` }}
             >
-              <div className="pointer-events-none absolute inset-3 border" style={{ borderColor: `${r.accent}40` }} />
+              <div
+                className="pointer-events-none absolute inset-3 border"
+                style={{ borderColor: `${r.accent}25` }}
+              />
               <div className="relative">
                 <div className="flex gap-0.5 text-lg" style={{ color: r.accent }}>★★★★★</div>
                 <p className="mt-6 font-serif text-lg italic leading-relaxed text-charcoal/85">

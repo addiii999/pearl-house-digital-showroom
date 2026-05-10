@@ -4,7 +4,11 @@ export function StickyWhatsApp() {
       href="https://wa.me/919334454153?text=Hello%20Pearl%20House"
       target="_blank" rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full shadow-2xl transition-transform hover:scale-110"
-      style={{ background: "linear-gradient(135deg,#00FF41,#00B028)", color: "#fff" }}
+      style={{
+        background: "linear-gradient(135deg, #25D366, #128C7E)",
+        color: "#fff",
+        boxShadow: "0 8px 32px rgba(37,211,102,0.35), 0 2px 8px rgba(0,0,0,0.40)",
+      }}
       aria-label="Chat on WhatsApp"
     >
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor">

@@ -6,7 +6,7 @@ export function Consultation() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <p className="label text-fuchsia-deco">◆ Expert Consultation ◆</p>
+            <p className="label" style={{ color: "#C9A96E" }}>◆ Expert Consultation ◆</p>
             <h2 className="mt-5 font-display text-4xl md:text-5xl">
               Sit With a <span className="italic shimmer-vibrant">Master Jeweller</span>
             </h2>
@@ -24,7 +24,7 @@ export function Consultation() {
                 "Live gold-rate guidance and investment advice",
               ].map((t) => (
                 <li key={t} className="flex gap-3">
-                  <span className="diamond-fuchsia mt-2">◆</span>
+                  <span className="mt-2" style={{ color: "#C9A96E" }}>◆</span>
                   <span>{t}</span>
                 </li>
               ))}
@@ -40,7 +40,12 @@ export function Consultation() {
               <Field label="Phone / WhatsApp" placeholder="+91 9XXXX XXXXX" />
               <div>
                 <label className="label text-muted-foreground">Interested In</label>
-                <select className="mt-2 w-full border-2 border-[color:var(--gold)]/40 bg-transparent px-4 py-3 font-serif text-lg focus:border-fuchsia-deco focus:outline-none">
+                <select
+                  className="mt-2 w-full px-4 py-3 font-serif text-lg focus:outline-none border-2 bg-transparent"
+                  style={{ borderColor: "rgba(201,169,110,0.40)" }}
+                  onFocus={e => (e.currentTarget.style.borderColor = "#C9A96E")}
+                  onBlur={e => (e.currentTarget.style.borderColor = "rgba(201,169,110,0.40)")}
+                >
                   <option>Bridal Collection</option>
                   <option>Gold Jewellery</option>
                   <option>Diamond Jewellery</option>
@@ -66,18 +71,30 @@ export function Consultation() {
 }
 
 function Field({ label, placeholder, textarea }: { label: string; placeholder?: string; textarea?: boolean }) {
+  const fieldStyle: React.CSSProperties = {
+    borderColor: "rgba(201,169,110,0.40)",
+  };
+  const cls = "mt-2 w-full border-2 bg-transparent px-4 py-3 font-serif text-lg focus:outline-none";
+
   return (
     <div>
       <label className="label text-muted-foreground">{label}</label>
       {textarea ? (
-        <textarea rows={4}
+        <textarea
+          rows={4}
           placeholder={placeholder}
-          className="mt-2 w-full border-2 border-[color:var(--gold)]/40 bg-transparent px-4 py-3 font-serif text-lg focus:border-fuchsia-deco focus:outline-none"
+          className={cls}
+          style={fieldStyle}
+          onFocus={e => (e.currentTarget.style.borderColor = "#C9A96E")}
+          onBlur={e => (e.currentTarget.style.borderColor = "rgba(201,169,110,0.40)")}
         />
       ) : (
         <input
           placeholder={placeholder}
-          className="mt-2 w-full border-2 border-[color:var(--gold)]/40 bg-transparent px-4 py-3 font-serif text-lg focus:border-fuchsia-deco focus:outline-none"
+          className={cls}
+          style={fieldStyle}
+          onFocus={e => (e.currentTarget.style.borderColor = "#C9A96E")}
+          onBlur={e => (e.currentTarget.style.borderColor = "rgba(201,169,110,0.40)")}
         />
       )}
     </div>
@@ -89,7 +106,7 @@ export function VisitContact() {
     <section id="visit" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center fade-up">
-          <p className="label text-fuchsia-deco">◆ Visit Our Showroom ◆</p>
+          <p className="label" style={{ color: "#C9A96E" }}>◆ Visit Our Showroom ◆</p>
           <h2 className="mt-5 font-display text-4xl md:text-6xl">
             Step Into <span className="italic shimmer-vibrant">Pearl House</span>
           </h2>
@@ -99,7 +116,7 @@ export function VisitContact() {
         <div className="mt-16 grid gap-10 md:grid-cols-2">
           <InfoCard
             title="Address"
-            accent="#FF1493"
+            accent="#C9A96E"
             lines={[
               "Shop No. 117, Srilok Complex",
               "Old Hazaribagh Road, Bhaba Nagar",
@@ -109,7 +126,7 @@ export function VisitContact() {
           />
           <InfoCard
             title="Speak With Us"
-            accent="#00D9FF"
+            accent="#D4913C"
             lines={[
               "Phone — 093344 54153",
               "WhatsApp — 093344 54153",
@@ -119,7 +136,7 @@ export function VisitContact() {
           />
         </div>
 
-        <div className="mt-12 overflow-hidden border-2 border-[color:var(--gold)]/40">
+        <div className="mt-12 overflow-hidden border-2" style={{ borderColor: "rgba(201,169,110,0.40)" }}>
           <iframe
             title="Pearl House Ranchi map"
             className="h-[420px] w-full grayscale-[20%]"
@@ -135,7 +152,10 @@ export function VisitContact() {
 function InfoCard({ title, lines, accent, cta }: { title: string; lines: string[]; accent: string; cta: { label: string; href: string } }) {
   return (
     <div className="luxe-card relative border-2 p-10" style={{ borderColor: accent }}>
-      <div className="pointer-events-none absolute inset-3 border" style={{ borderColor: `${accent}40` }} />
+      <div
+        className="pointer-events-none absolute inset-3 border"
+        style={{ borderColor: `${accent}30` }}
+      />
       <div className="relative">
         <div className="flex items-center gap-3 label" style={{ color: accent }}>
           <span>◆</span> {title}
@@ -143,7 +163,9 @@ function InfoCard({ title, lines, accent, cta }: { title: string; lines: string[
         <div className="mt-6 space-y-2 font-serif text-xl">
           {lines.map((l) => <div key={l}>{l}</div>)}
         </div>
-        <a href={cta.href} target="_blank" rel="noopener noreferrer"
+        <a
+          href={cta.href}
+          target="_blank" rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-2 label hover:opacity-70 transition-opacity"
           style={{ color: accent }}
         >
